@@ -95,7 +95,7 @@ angular.module("app").run(["$templateCache", function($templateCache) {
     "\n" +
     "        <div class=\"form-group\">\n" +
     "            <labe>Birthdate</label>\n" +
-    "                <input type=\"date\" class=\"form-control\" placeholder=\"Your Birthatey\" ng-model=\"newStudent.lastname\">\n" +
+    "                <input type=\"date\" class=\"form-control\" placeholder=\"Your Birthatey\" ng-model=\"newStudent.birthdate\">\n" +
     "        </div>\n" +
     "\n" +
     "        <div class=\"form-group\">\n" +
@@ -126,6 +126,23 @@ angular.module("app").run(["$templateCache", function($templateCache) {
     "</div>\n"
   );
 
+  $templateCache.put("student/list.html",
+    "<a ui-sref=\"user.createStudent\">Add new student</a>\n" +
+    "<table>\n" +
+    "  <tr ng-repeat=\"student in students\">\n" +
+    "    <td>{{student.firstname}}</td>\n" +
+    "    <td>{{student.lastname}}</td>\n" +
+    "    <td>{{student.sexe}}</td>\n" +
+    "    <td>{{student.birthdate | date}}</td>\n" +
+    "    <td>{{student.city}}</td>\n" +
+    "    <td>{{student.zipCode}}</td>\n" +
+    "    <td>{{student.adress}}</td>\n" +
+    "    <td>{{student.github}}</td>\n" +
+    "    <td>{{student.email}}</td>\n" +
+    "  </tr>\n" +
+    "</table>\n"
+  );
+
   $templateCache.put("user/dashboard.html",
     "Dashboard de {{user.email}}\n"
   );
@@ -144,6 +161,7 @@ angular.module("app").run(["$templateCache", function($templateCache) {
     "        </div>\n" +
     "        <div class=\"collapse navbar-collapse\" id=\"navbar\">\n" +
     "            <ul class=\"nav navbar-nav\">\n" +
+    "                <li ui-sref-active=\"active\"><a ui-sref=\"user.studentlist\" ng-show=\"auth.isAuthenticated()\">Create student</a></li>\n" +
     "                <li ui-sref-active=\"active\"><a ui-sref=\"user.dashboard\" ng-show=\"auth.isAuthenticated()\">Dashboard</a></li>\n" +
     "                <li ui-sref-active=\"active\"><a ui-sref=\"user.profile\" ng-show=\"auth.isAuthenticated()\">Profile</a></li>\n" +
     "\n" +

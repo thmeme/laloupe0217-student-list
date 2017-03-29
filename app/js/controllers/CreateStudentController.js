@@ -15,9 +15,17 @@ angular.module('app')
         $scope.addStudent = function() {
             console.log('coucou');
             StudentService.create($scope.newStudent).then(function(res) {
-
-            }, function(err) {
-
-            });
+                $scope.newStudent = {
+                    firstname: '',
+                    lastname: '',
+                    sexe: '',
+                    birthdate: '',
+                    city: '',
+                    zipCode: '',
+                    adresse: '',
+                    github: '',
+                    email: ''
+                };
+            }, function(err) {});
         };
     });

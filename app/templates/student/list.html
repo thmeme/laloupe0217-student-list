@@ -1,0 +1,14 @@
+<a ui-sref="user.createStudent">Add new student</a>
+<table>
+  <tr ng-repeat="student in students">
+    <td>{{student.firstname}}</td>
+    <td>{{student.lastname}}</td>
+    <td>{{student.sexe}}</td>
+    <td>{{student.birthdate | date}}</td>
+    <td>{{student.city}}</td>
+    <td>{{student.zipCode}}</td>
+    <td>{{student.adress}}</td>
+    <td>{{student.github}}</td>
+    <td>{{student.email}}</td>
+  </tr>
+</table>

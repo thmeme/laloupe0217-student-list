@@ -10,6 +10,8 @@ module.exports = (app) => {
 
     router.post('/', Auth.isAdministrator, student.create);
 
+    router.get('/', Auth.hasAuthorization, student.getAll);
+
     app.use('/students', router);
 
 };

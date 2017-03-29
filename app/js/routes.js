@@ -80,6 +80,15 @@ angular.module('app')
                         controller: 'CreateStudentController'
                     }
                 }
+            })
+            .state('user.studentlist', {
+                url: '/Students',
+                views: {
+                    'content@': {
+                        templateUrl: 'student/list.html',
+                        controller: 'StudentController'
+                    }
+                }
             });
         $urlRouterProvider.otherwise('/');
     });

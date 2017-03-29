@@ -7342,6 +7342,9 @@ button.close {
   }
 }
 
+td {
+  padding: 5px;
+}
 
 
 /*# sourceMappingURL=app.css.map */

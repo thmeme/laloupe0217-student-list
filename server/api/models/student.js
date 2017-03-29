@@ -28,7 +28,7 @@ const studentSchema = new mongoose.Schema({
     github: {
         type: String,
         unique: true
-    },
+     },
     email: {
         type: String,
         required: [true, 'Email address is required'],
@@ -43,7 +43,7 @@ let model = mongoose.model('Student', studentSchema);
 
 export default class Student {
 
-    create (req, res) {
+    create(req, res) {
         model.create(req.body, (err, student) => {
             if (err) {
                 res.status(500).send(err.message);
@@ -55,4 +55,13 @@ export default class Student {
             }
         });
     }
-  }
+    getAll(req, res) {
+        model.find({}, (err, students) => {
+            if (err || !students) {
+                res.status(403).send(err.message);
+            } else {
+                res.json(students);
+            }
+        });
+    }
+}
