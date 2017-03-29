@@ -1,0 +1,51 @@
+<div class="container">
+    <form ng-submit="addStudent()">
+        <div class="form-group">
+            <labe>Firstname</label>
+                <input type="text" class="form-control" placeholder="Your firstname" ng-model="newStudent.firstname">
+        </div>
+
+        <div class="form-group">
+            <labe>Lastname</label>
+                <input type="text" class="form-control" placeholder="Your Lastname" ng-model="newStudent.lastname">
+        </div>
+        <div class="form-group">
+            <labe>Sexe</label>
+                <select ng-model="newStudent.sexe">
+              <option>Male</option>
+              <option>Female</option>
+              <option>Autre</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <labe>Birthdate</label>
+                <input type="date" class="form-control" placeholder="Your Birthatey" ng-model="newStudent.lastname">
+        </div>
+
+        <div class="form-group">
+            <labe>City</label>
+                <input type="text" class="form-control" placeholder="Your City" ng-model="newStudent.city">
+        </div>
+
+        <div class="form-group">
+            <labe>Postal-code</label>
+                <input type="text" class="form-control" placeholder="Your Postal code" ng-model="newStudent.zipCode">
+        </div>
+
+        <div class="form-group">
+            <labe>Adresse</label>
+                <input type="text" class="form-control" placeholder="Your adresse" ng-model="newStudent.adresse">
+        </div>
+
+        <div class="form-group">
+            <labe>Github</label>
+                <input type="text" class="form-control" placeholder="Your Github" ng-model="newStudent.github">
+        </div>
+        <div class="form-group">
+            <labe>e-mail</label>
+                <input type="email" class="form-control" placeholder="Your Lastname" ng-model="newStudent.email">
+        </div>
+        <button type="submit" class="btn btn-default">Send</button>
+    </form>
+</div>
