@@ -57817,11 +57817,12 @@ angular.module('app')
 angular.module('app')
     .controller('CreateStudentController', function($scope, StudentService) {
         /* Here is your main controller */
-        $scope.nexStudent = {
+        $scope.newStudent = {
             firstname: '',
             lastname: '',
             sexe: '',
             birthdate: '',
+            city: '',
             zipCode: '',
             adresse: '',
             github: '',
@@ -57830,7 +57831,7 @@ angular.module('app')
         $scope.addStudent = function() {
             console.log('coucou');
             StudentService.create($scope.newStudent).then(function(res) {
-              
+
             }, function(err) {
 
             });
@@ -58082,7 +58083,7 @@ angular.module("app").run(["$templateCache", function($templateCache) {
     "        </div>\n" +
     "\n" +
     "        <div class=\"form-group\">\n" +
-    "            <labe>Postal-code</label>\n" +
+    "            <labe>Postal code</label>\n" +
     "                <input type=\"text\" class=\"form-control\" placeholder=\"Your Postal code\" ng-model=\"newStudent.zipCode\">\n" +
     "        </div>\n" +
     "\n" +
@@ -58097,9 +58098,9 @@ angular.module("app").run(["$templateCache", function($templateCache) {
     "        </div>\n" +
     "        <div class=\"form-group\">\n" +
     "            <labe>e-mail</label>\n" +
-    "                <input type=\"email\" class=\"form-control\" placeholder=\"Your Lastname\" ng-model=\"newStudent.email\">\n" +
+    "                <input type=\"email\" class=\"form-control\" placeholder=\"Your e-mail\" ng-model=\"newStudent.email\">\n" +
     "        </div>\n" +
-    "        <button type=\"submit\" class=\"btn btn-default\">Send</button>\n" +
+    "        <button type=\"submit\" class=\"btn btn-default\">Create</button>\n" +
     "    </form>\n" +
     "</div>\n"
   );

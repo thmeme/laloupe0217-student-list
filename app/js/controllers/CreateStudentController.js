@@ -1,11 +1,12 @@
 angular.module('app')
     .controller('CreateStudentController', function($scope, StudentService) {
         /* Here is your main controller */
-        $scope.nexStudent = {
+        $scope.newStudent = {
             firstname: '',
             lastname: '',
             sexe: '',
             birthdate: '',
+            city: '',
             zipCode: '',
             adresse: '',
             github: '',
@@ -14,7 +15,7 @@ angular.module('app')
         $scope.addStudent = function() {
             console.log('coucou');
             StudentService.create($scope.newStudent).then(function(res) {
-              
+
             }, function(err) {
 
             });
